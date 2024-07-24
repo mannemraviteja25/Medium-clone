@@ -36,7 +36,7 @@ userRouter.post('/signup', async (c) => {
       const jwt = await sign({
         id: user.id,
       }, c.env.JWT_SECRET)
-      return c.text(`Hello ${body.username} welcome to Medium!  Your token is ${jwt}`)
+      return c.text(`Bearer ${jwt}`)
     }
     catch (e) {
       return c.text('User with this username already exists')
@@ -70,7 +70,7 @@ userRouter.post('/signup', async (c) => {
       const jwt = await sign({
         id: user.id,
       }, c.env.JWT_SECRET)
-      return c.text(`Hello ${body.username} congratulations you are signed!! your token is ${jwt}`)
+      return c.text(`Bearer ${jwt}`)
     }
     catch (e) {
       return c.text('Incorrect credentials!!')
