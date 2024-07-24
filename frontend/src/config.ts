@@ -1,0 +1,1 @@
+export const BACKEND_URL = "https://medium.mannemraviteja25.workers.dev/";
